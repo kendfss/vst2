@@ -17,6 +17,9 @@ $ go get -u pipelined.dev/audio/vst2
 
 Refer `godoc` documentation for example.
 
+## Build
+[Here](https://pipelined.dev/2021/04/vst2-plugins-in-go/) are some instructions for building.
+
 ## License
 
 `vst2` is licensed under MIT license.

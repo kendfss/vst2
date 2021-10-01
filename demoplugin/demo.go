@@ -5,8 +5,21 @@ package main
 import (
 	"fmt"
 	"math"
+
 	"pipelined.dev/audio/vst2"
 )
+
+func main() {}
+
+func LinearToDecibel(linear float32) float32 {
+	var db float32
+	if linear != 0 {
+		db = 20. * float32(math.Log(float64(linear)))
+	} else {
+		db = -144.0
+	}
+	return db
+}
 
 func init() {
 	var (
@@ -21,9 +34,7 @@ func init() {
 			GetValueLabelFunc: func(value float32) string {
 				return fmt.Sprintf("%+.2f", value)
 			},
-			GetValueFunc: func(value float32) float32 {
-				return -20 + (40 * value)
-			},
+			GetValueFunc: LinearToDecibel,
 		}
 		channels := 2
 		return vst2.Plugin{
@@ -57,4 +68,3 @@ func init() {
 	}
 }
 
-func main() {}

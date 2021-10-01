@@ -1,8 +1,13 @@
+### OSX ###
+.DS_Store
+
 ### Go ###
 # Binaries for programs and plugins
 *.exe
 *.so
 *.dylib
+*.exe~
+*.dll
 
 # Test binary, build with `go test -c`
 *.test
@@ -20,3 +25,8 @@ vendor/
 
 # Golang dep tool
 Gopkg.lock
+
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
